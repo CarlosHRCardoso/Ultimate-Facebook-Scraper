@@ -130,8 +130,8 @@ The tool uses latest version of [Chrome Web Driver](http://chromedriver.chromium
 
 ### How to Run
 
-- Fill your Facebook credentials into [`credentials.yaml`](credentials.yaml)
-- Edit the [`input.txt`](input.txt) file and add many profiles links as you want in the following format with each link on a new line:
+- Fill your Facebook credentials into [`credentials.yaml`](scraper/credentials.yaml)
+- Edit the [`input.txt`](scraper/input.txt) file and add many profiles links as you want in the following format with each link on a new line:
 
 Make sure the link only contains the username or id number at the end and not any other stuff. Make sure its in the format mentioned above.
 
