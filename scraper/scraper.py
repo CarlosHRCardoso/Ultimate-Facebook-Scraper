@@ -4,6 +4,7 @@ import platform
 import sys
 import urllib.request
 import yaml
+import time
 
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
@@ -30,7 +31,7 @@ download_friends_photos = False
 friends_small_size = False
 photos_small_size = False
 
-total_scrolls = 50 #2500
+total_scrolls = 2 #2500
 current_scrolls = 0
 scroll_time = 8
 
@@ -619,7 +620,7 @@ def scrap_profile(ids):
 
     # execute for all profiles given in input.txt file
     for user_id in ids:
-
+        time.sleep(10)
         driver.get(user_id)
         url = driver.current_url
         user_id = create_original_link(url)
@@ -680,7 +681,7 @@ def scrap_profile(ids):
         ]
         save_status = 0
 
-        scrape_data(user_id, scan_list, section, elements_path, save_status, file_names)
+        ##scrape_data(user_id, scan_list, section, elements_path, save_status, file_names)
         print("Friends Done!")
 
         # ----------------------------------------------------------------------------
@@ -695,7 +696,7 @@ def scrap_profile(ids):
         file_names = ["Uploaded Photos.txt", "Tagged Photos.txt"]
         save_status = 1
 
-        scrape_data(user_id, scan_list, section, elements_path, save_status, file_names)
+        ##scrape_data(user_id, scan_list, section, elements_path, save_status, file_names)
         print("Photos Done!")
 
         # ----------------------------------------------------------------------------
@@ -710,7 +711,7 @@ def scrap_profile(ids):
         file_names = ["Uploaded Videos.txt", "Tagged Videos.txt"]
         save_status = 2
 
-        scrape_data(user_id, scan_list, section, elements_path, save_status, file_names)
+        ##scrape_data(user_id, scan_list, section, elements_path, save_status, file_names)
         print("Videos Done!")
         # ----------------------------------------------------------------------------
 
@@ -755,7 +756,7 @@ def scrap_profile(ids):
         file_names = ["Posts.txt"]
         save_status = 4
 
-        scrape_data(user_id, scan_list, section, elements_path, save_status, file_names)
+        ##scrape_data(user_id, scan_list, section, elements_path, save_status, file_names)
         print("Posts(Statuses) Done!")
         print("----------------------------------------")
     # ----------------------------------------------------------------------------
